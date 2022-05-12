@@ -6,21 +6,98 @@ img{
 
     display: block;
     float: left;
-    width: calc(100% / 6);
+    width: calc(100% / 6 - 10px);
     height: 166px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     box-sizing: border-box;
     object-fit: cover;
+    box-shadow: 5px 5px 15px black;
+    margin: 5px;
+    transition: 0.3s;
 
+}
+img:hover{
+    transform: scale(0.9);
+    box-shadow: 1px 1px 7px black;
+
+}
+body{
+    text-align: center;
+    background: url(геометрия.png);
 }
 h1{
     font-size: 60px;
     text-align: center;
     margin: 40px 0;
     font-family: 'Montserrat', sans-serif;
+    color: white;
+    text-shadow: 4px 4px 7px black;
 }
 .container{
     width: 1000px;
     margin: auto;
     position: relative;
+    margin-bottom: 50px;
+    overflow: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.steps{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 40px;
+    text-shadow: 4px 4px 7px black;
+    color: white;
+
+
+}
+.newGame{
+    /* position: absolute; */
+    font-family: 'Montserrat', sans-serif;
+    width: 200px;
+    padding: 10px 7px;
+    border-radius: 20px;
+    background-color: white;
+    transition: 0.3s;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    /* margin-top: 650px; */
+    /* right: calc(50% - 102px); */
+    display: inline-block;
+    /* margin-top: 40px; */
+    margin-bottom: 20px;
+    background: linear-gradient(to bottom, #ffaa2e 50%, rgba(0,212,255,1) 50%);
+    background-size: 100% 200%;
+    background-position: top;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.562);
+
+
+
+    
+
+
+}
+.newGame:hover{
+    background-position: bottom;
+}
+
+@media (max-width:600px){
+    .container{
+        width: 80%;
+        
+        
+    }
+    img{
+        width: 25%;
+        height: calc(100% / 6);
+        background-position: center;
+        
+    }
+    h1{
+        font-size: 30px;
+    }
+    .steps{
+        margin: 20px 0;
+    }
 }
