@@ -20,6 +20,7 @@ img:hover{
     transform: scale(0.9);
     box-shadow: 1px 1px 7px black;
 
+
 }
 body{
     text-align: center;
@@ -28,13 +29,15 @@ body{
 h1{
     font-size: 60px;
     text-align: center;
-    margin: 40px 0;
+    margin: 40px ;
     font-family: 'Montserrat', sans-serif;
     color: white;
     text-shadow: 4px 4px 7px black;
 }
 .container{
-    width: 1000px;
+    width: 100%;
+
+    max-width: 1000px;
     margin: auto;
     position: relative;
     margin-bottom: 50px;
@@ -66,7 +69,7 @@ h1{
     /* right: calc(50% - 102px); */
     display: inline-block;
     /* margin-top: 40px; */
-    margin-bottom: 20px;
+    margin-bottom: 400px;
     background: linear-gradient(to bottom, #ffaa2e 50%, rgba(0,212,255,1) 50%);
     background-size: 100% 200%;
     background-position: top;
@@ -84,13 +87,13 @@ h1{
 
 @media (max-width:600px){
     .container{
-        width: 80%;
+        width: 100%;
         
         
     }
     img{
-        width: 20%;
-        height: calc(100% / 6);
+        width: calc(100% / 4 - 10px);
+        height: 65px;
         background-position: center;
         
     }

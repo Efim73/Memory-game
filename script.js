@@ -56,6 +56,7 @@ for (let i = images.length - 1; i > 0; i--) {
 }
 for (let i = 0; i < 24; i++) {
     let img = document.createElement('img')
+
     img.src = rubashka
     title.onclick = function(){
         img.src = 'салют.jpg'
@@ -106,13 +107,25 @@ for (let i = 0; i < 24; i++) {
     }
     // добавляет карточки в контеинер
     container.appendChild(img)
+    resizeImage(img);
 
 }
 function flipImage(img, image) {
     img.src = image;
 
 }
+window.onresize = function(event) {
+    let cards = document.getElementsByTagName('img')
+    console.log(cards);
+    for(let i = 0; i<24; i++){
+        resizeImage(cards[i]);
 
+    }
+};
+function resizeImage(img){
+    img.style.height=img.offsetWidth+'px';
+
+}
 
 
 
