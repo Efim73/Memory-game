@@ -15,19 +15,13 @@ let h1 = document.getElementsByTagName('h1')[0];
 
 title.onclick = function () {
     let allCards = document.getElementsByTagName('img')
-
     for (i = 0; i < 24; i++) {
        allCards[i].src = 'салют.jpg'
        allCards[i].style.borderRadius='83px';
 
        
     }
-
-
-
 }
-
-
 newGame.onclick = function () {
     counter = 0;
     for (let i = images.length - 1; i > 0; i--) {
@@ -43,8 +37,6 @@ newGame.onclick = function () {
     for (let i = 0; i < 24; i++) {
         allCards[i].src = 'рубашка.webp'
         allCards[i].style.pointerEvents = 'auto';
-
-
     }
 }
 
@@ -54,31 +46,24 @@ for (let i = 1; i < 13; i++) {
 }
 
 
-// for (let i = images.length - 1; i > 0; i--) {
-//     let randomNumber = Math.floor(Math.random() * (i + 1))
-//     let vremenaya = images[i]
-//     images[i] = images[randomNumber]
-//     images[randomNumber] = vremenaya;
-// }
+for (let i = images.length - 1; i > 0; i--) {
+    let randomNumber = Math.floor(Math.random() * (i + 1))
+    let vremenaya = images[i]
+    images[i] = images[randomNumber]
+    images[randomNumber] = vremenaya;
+}
 for (let i = 0; i < 24; i++) {
     let img = document.createElement('img')
     img.src = rubashka
-    // title.onclick = function(){
-    //     img.src = 'салют.jpg'
-        
-
-    // }
+    title.onclick = function(){
+        img.src = 'салют.jpg'
+    }
     img.onclick = function (event) {
-
-
-
-
         // для извлечения напзвания картинки как в файле. Если игрок кликнул по рубашке, тогда засчитывать нажатие.
         if (img.getAttribute('src')==rubashka) {
             // добавить данную карточку в массив с открытыми карточками
             openCards.push(img)
             counter++;
-
             img.style.pointerEvents = 'none'
             // event.target - (тэг по которому кликает игрок)
             flipImage(event.target, images[i]);
@@ -113,9 +98,7 @@ for (let i = 0; i < 24; i++) {
                         }
                         openCards = [];
                     }, 1000)
-
                 }
-
             }
         }
     }
@@ -123,7 +106,6 @@ for (let i = 0; i < 24; i++) {
     container.appendChild(img)
 
 }
-
 function flipImage(img, image) {
     img.src = image;
 
