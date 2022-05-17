@@ -24,19 +24,21 @@ title.onclick = function () {
 }
 newGame.onclick = function () {
     counter = 0;
+    document.body.style.background = 'url("геометрия.png")'
+    step = 0;
+    steps.innerHTML = 'Попытки: ' + step
+    openCards = [];
+    let allCards = document.getElementsByTagName('img')
+    
+    for (let i = 0; i < 24; i++) {
+        allCards[i].src = 'рубашка.webp'
+        allCards[i].style.pointerEvents = 'auto';
+    }
     for (let i = images.length - 1; i > 0; i--) {
         let randomNumber = Math.floor(Math.random() * (i + 1))
         let vremenaya = images[i]
         images[i] = images[randomNumber]
         images[randomNumber] = vremenaya;
-    }
-    step = 0;
-    steps.innerHTML = 'Попытки: ' + step
-    openCards = [];
-    let allCards = document.getElementsByTagName('img')
-    for (let i = 0; i < 24; i++) {
-        allCards[i].src = 'рубашка.webp'
-        allCards[i].style.pointerEvents = 'auto';
     }
 }
 
